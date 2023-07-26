@@ -8,11 +8,24 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
 constructor(private route:Router){}
-journey(){
+
+journey(journey:string){
   console.log('journey');
-  
-  this.route.navigateByUrl('admin')
-  this.route.navigateByUrl('owner')
+  if(journey==='admin')
+  {
+    this.route.navigateByUrl ('admin');
+
+  }
+else if(journey==='owner')
+{
+  this.route.navigateByUrl ('owner');
+
+}
+ else (journey==='user') 
+{
+  this.route.navigateByUrl ('user');
+
+}
 
 }
 
